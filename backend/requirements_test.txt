@@ -28,6 +28,6 @@ SQLAlchemy==2.0.37
 typing_extensions==4.12.2
 python-dotenv==1.0.1
 flask_jwt_extended==4.6.0
-# psycopg2-binary==2.9.10
+psycopg2-binary==2.9.10
 pyjwt==2.9.0
 zipp==3.20.2
