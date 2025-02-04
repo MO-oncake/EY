@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, session
+from flask import Blueprint, request, jsonify, session, redirect, url_for, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token
 # from models.event import Event
@@ -18,7 +18,7 @@ ticket_bp = Blueprint('ticket_bp', __name__)
 user_bp = Blueprint('user_bp', __name__)
 
 __all__ = [
-    'Blueprint', 'request', 'jsonify', 'session',
+    'Blueprint', 'request', 'jsonify', 'session', 'redirect', 'url_for',
     'generate_password_hash', 'check_password_hash',
     'create_access_token', 'auth_bp', 'event_bp', 'filter_bp', 'payment_bp', 'ticket_bp', 'user_bp'
 ]
