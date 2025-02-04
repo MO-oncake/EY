@@ -1,11 +1,13 @@
+from .common_imports import *
+
 # Routes for Users
-@app.route('/users', methods=['GET'])
+@user_bp.route('/users', methods=['GET'])
 def get_users():
     users = User.query.all()
     users_data = [{"id": user.id, "username": user.username, "email": user.email, "role": user.role} for user in users]
     return jsonify(users_data), 200
 
-@app.route('/users/<int:id>', methods=['GET'])
+@user_bp.route('/users/<int:id>', methods=['GET'])
 def get_user(id):
     user = User.query.get(id)
     if user:

@@ -1,10 +1,5 @@
 # payment_routes.py
-from flask import Blueprint, jsonify, request
-from db import db
-from models.payment import Payment  # Assuming your model is named Payment
-
-# Create a Blueprint for payments
-payment_bp = Blueprint('payment_bp', __name__)
+from .common_imports import *
 
 # Routes for Payments
 @payment_bp.route('/payments', methods=['GET'])

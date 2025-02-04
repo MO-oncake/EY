@@ -1,11 +1,5 @@
 # ticket_routes.py
-from flask import Blueprint, jsonify, request
-from db import db
-from models.event_ticket_count import EventTicketCount  # Assuming your model is named EventTicketCount
-from models.event_ticket_type import EventTicketType  # Assuming your model is named EventTicketType
-
-# Create a Blueprint for ticket routes
-ticket_bp = Blueprint('ticket_bp', __name__)
+from .common_imports import *
 
 # Routes for EventTicketCount
 @ticket_bp.route('/event_ticket_counts', methods=['GET'])

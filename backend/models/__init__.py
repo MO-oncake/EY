@@ -1,6 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from backend.app import db
 
 # Import models so they register properly
 from .user import User

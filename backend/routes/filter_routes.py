@@ -1,11 +1,5 @@
 # filter_routes.py
-from flask import Blueprint, jsonify, request
-from db import db
-from models.category import Category
-from models.tag import Tag
-
-# Create a Blueprint for filters (categories and tags)
-filter_bp = Blueprint('filter_bp', __name__)
+from .common_imports import *
 
 # Routes for Categories
 @filter_bp.route('/categories', methods=['GET'])

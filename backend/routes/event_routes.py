@@ -1,13 +1,5 @@
 # event_routes.py
-from flask import Blueprint, jsonify, request
-from db import db
-from models.event import Event
-from models.event_date import EventDate
-from models.event_ticket_count import EventTicketCount
-from models.event_ticket_type import EventTicketType
-
-# Create a Blueprint for events
-event_bp = Blueprint('event_bp', __name__)
+from .common_imports import *
 
 # Routes for Events
 @event_bp.route('/events', methods=['GET'])
