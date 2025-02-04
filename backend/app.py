@@ -22,9 +22,20 @@ def create_app():
     cors.init_app(app)
 
     # Import and register blueprints
-    # with app.app_context():
     from routes.event_routes import event_bp
+    from routes.auth_routes import auth_bp
+    from routes.ticket_routes import ticket_bp
+    from routes.user_routes import user_bp
+    from routes.payment_routes import payment_bp
+    from routes.filter_routes import filter_bp
+
+    # with app.app_context():
     app.register_blueprint(event_bp)
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(ticket_bp)
+    app.register_blueprint(user_bp)
+    app.register_blueprint(payment_bp)
+    app.register_blueprint(filter_bp)
 
     return app
 
