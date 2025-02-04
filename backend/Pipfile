@@ -16,4 +16,3 @@ requests = "*"
 [dev-packages]
 
 [requires]
-python_version = "*"
