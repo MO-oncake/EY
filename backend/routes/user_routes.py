@@ -1,4 +1,5 @@
 from .common_imports import *
+from models.user import User
 
 # Routes for Users
 @user_bp.route('/users', methods=['GET'])

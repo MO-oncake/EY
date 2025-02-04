@@ -1,37 +1,33 @@
-import os
-from flask import Flask, jsonify, request, redirect, url_for, session
-from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
-from dotenv import load_dotenv
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask
 from datetime import timedelta
-from flask_jwt_extended import create_access_token
-from flask_jwt_extended import JWTManager
+from dotenv import load_dotenv
+import os
+from extensions import db, jwt, cors
 
-# Load environment variables from .env file
-load_dotenv()
+def create_app():
+    load_dotenv()
+    app = Flask(__name__)
 
-app = Flask(__name__)
+    # Configure app
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'default_secret_key')
+    app.config['SESSION_COOKIE_NAME'] = 'session'
+    app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=5)
+    app.config["JWT_SECRET_KEY"] = "your_secret_key"
 
-# Set up the secret key for sessions and security purposes
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'default_secret_key')
-app.config['SESSION_COOKIE_NAME'] = 'session'
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=5)
-app.config["JWT_SECRET_KEY"] = "your_secret_key" 
+    # Initialize extensions
+    db.init_app(app)
+    jwt.init_app(app)
+    cors.init_app(app)
 
-jwt = JWTManager(app)
+    # Import and register blueprints
+    # with app.app_context():
+    from routes.event_routes import event_bp
+    app.register_blueprint(event_bp)
 
-# Set up the PostgreSQL database connection using SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# Initialize the database
-db = SQLAlchemy(app)
-
-# Enable Cross-Origin Resource Sharing (CORS)
-CORS(app)
-
-# models and routes moved to individual folders
+    return app
 
 if __name__ == '__main__':
+    app = create_app()
     app.run(debug=True, host='0.0.0.0', port=int(os.getenv("PORT", 5000)))

@@ -1,5 +1,8 @@
 # ticket_routes.py
 from .common_imports import *
+from models.event_ticket_type import EventTicketType
+from models.event_ticket_count import EventTicketCount
+from extensions import db
 
 # Routes for EventTicketCount
 @ticket_bp.route('/event_ticket_counts', methods=['GET'])

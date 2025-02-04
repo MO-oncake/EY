@@ -1,5 +1,12 @@
 # event_routes.py
 from .common_imports import *
+from models.event_ticket_type import EventTicketType
+from models.event_date import EventDate
+from models.event_ticket_count import EventTicketCount
+from models.event import Event
+from extensions import db
+
+event_bp = Blueprint('event_bp', __name__)
 
 # Routes for Events
 @event_bp.route('/events', methods=['GET'])

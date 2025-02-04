@@ -1,5 +1,8 @@
 # filter_routes.py
 from .common_imports import *
+from models.category import Category
+from models.tag import Tag
+from extensions import db
 
 # Routes for Categories
 @filter_bp.route('/categories', methods=['GET'])

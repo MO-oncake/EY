@@ -1,4 +1,4 @@
-from . import db
+from extensions import db
 
 class EventTicketCount(db.Model):
     __tablename__ = 'event_ticket_count'

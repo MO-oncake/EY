@@ -1,5 +1,7 @@
 # auth_routes.py
 from .common_imports import *
+from models.user import User
+from extensions import db
 
 # Register route
 @auth_bp.route('/register', methods=['POST'])

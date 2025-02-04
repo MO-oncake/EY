@@ -1,5 +1,7 @@
 # payment_routes.py
 from .common_imports import *
+from models.payment import Payment
+from extensions import db
 
 # Routes for Payments
 @payment_bp.route('/payments', methods=['GET'])

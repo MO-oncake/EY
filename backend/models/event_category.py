@@ -1,4 +1,4 @@
-from . import db
+from extensions import db
 
 class EventCategory(db.Model):
     __tablename__ = 'event_categories'

@@ -1,4 +1,4 @@
-from . import db
+from extensions import db
 
 class Ticket(db.Model):
     __tablename__ = 'tickets'
