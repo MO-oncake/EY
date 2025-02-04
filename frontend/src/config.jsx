@@ -1,3 +1,3 @@
 // const frontend_domain = 'https://event-yetu-2.vercel.app/events'
-const frontend_domain = 'http://127.0.0.1:5000'
+const frontend_domain = 'https://ey-production.up.railway.app'
 export default frontend_domain
