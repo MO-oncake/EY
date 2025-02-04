@@ -1,0 +1,75 @@
+/* CartPage.css */
+.container {
+    background-color: #f7f7f7;
+    /* Light grey background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2,
+h3 {
+    color: #6a4c9c;
+    /* Light purple color */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.2em;
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+    background-color: #ffffff;
+    /* White background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #6a4c9c;
+    /* Purple for form labels */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #9b59b6;
+    /* Purple button color */
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8e44ad;
+    /* Darker purple on hover */
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
